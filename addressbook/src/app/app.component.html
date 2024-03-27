@@ -3,26 +3,28 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span id="title">Contacts Book</span>
-  <a mat-button id="menuList" routerLink="/">Home</a>
-  <a mat-button id="menuList" routerLink="/contacts">Contacts List</a>
-  <a mat-button id="menuList" routerLink="/newcontact">New Contact</a>
+  <a mat-button id="menuList" routerLink="/"><mat-icon>home</mat-icon>Home</a>
+  <a mat-button id="menuList" routerLink="/contacts"><mat-icon>people</mat-icon>Contacts List</a>
+  <a mat-button id="menuList" routerLink="/newcontact"><mat-icon>person_add</mat-icon>New Contact</a>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [fixedInViewport]="true" [fixedTopGap]="60">
+  <mat-sidenav #sidenav mode="side" [fixedInViewport]="true" [fixedTopGap]="50">
     <div class="side-nav-items">
       <div>
-        <a mat-button id="side-menuList" routerLink="/">Home</a>
+        <a (click)="sidenav.close()" mat-button id="side-menuList" routerLink="/"><mat-icon>home</mat-icon>Home</a>
       </div>
     <div>
-      <a mat-button id="side-menuList" routerLink="/contacts">Contacts List</a>
+      <a (click)="sidenav.close()" mat-button id="side-menuList" routerLink="/contacts"><mat-icon>people</mat-icon>Contacts List</a>
     </div>
    <div>
-    <a mat-button id="side-menuList" routerLink="/newcontact">New Contact</a>
+    <a (click)="sidenav.close()" mat-button id="side-menuList" routerLink="/newcontact"><mat-icon>person_add</mat-icon>New Contact</a>
    </div>
   </div>
   </mat-sidenav>
   <mat-sidenav-content>
-   <router-outlet></router-outlet>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
