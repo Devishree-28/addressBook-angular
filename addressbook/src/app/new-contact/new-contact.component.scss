@@ -5,9 +5,26 @@
 }
 
 #cardContent{
- width: 800px; 
+ min-width: 800px; 
 }
 
 #cardbutton{
     margin-right: 10px;
+}
+
+#cardHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInputs{
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width:900px) {
+#cardContent{
+ min-width: 300px; 
+}  
 }

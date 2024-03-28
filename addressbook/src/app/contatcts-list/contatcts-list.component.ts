@@ -10,7 +10,7 @@ import { Contact } from '../Interfaces/contact';
 export class ContatctsListComponent implements OnInit {
 
 contactsArrary:Contact[]=[];
-displayedColumns: string[] = ['IdColumn','FirstNameColumn','LastNameColumn','PhoneNumberColumn','AddressColumn','UpdateColumn','DeleteColumn'];
+displayedColumns: string[] = ['FirstNameColumn','LastNameColumn','PhoneNumberColumn','AddressColumn','UpdateColumn','DeleteColumn'];
 
 constructor(public contactsListService:ContactServiceService){    
 }
