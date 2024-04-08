@@ -18,7 +18,7 @@
       </ng-container>
       <ng-container matColumnDef="UpdateColumn">
         <th mat-header-cell *matHeaderCellDef> Update </th>
-      <td mat-cell *matCellDef="let contactlist"> <button mat-raised-button color="primary">Update</button> </td> 
+      <td mat-cell *matCellDef="let contactlist"> <button mat-raised-button color="primary" (click)="onUpdate(contactlist)">Update</button> </td> 
       </ng-container>
       <ng-container matColumnDef="DeleteColumn">
         <th mat-header-cell *matHeaderCellDef> Delete </th>

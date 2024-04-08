@@ -11,19 +11,25 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HomeComponent } from './home/home.component';
 import { ContatctsListComponent } from './contatcts-list/contatcts-list.component';
 import { NewContactComponent } from './new-contact/new-contact.component';
+import { UpdateDialogComponent } from './Dialogs/update-dialog/update-dialog.component';
+import { DeleteDialogComponent } from './Dialogs/delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContatctsListComponent,
-    NewContactComponent
+    NewContactComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,8 @@ import { NewContactComponent } from './new-contact/new-contact.component';
     MatTableModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()
