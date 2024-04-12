@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Contact } from '../../Interfaces/contact';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactServiceService } from '../../services/contact-service.service';
 
 @Component({
   selector: 'app-update-dialog',
@@ -19,7 +20,10 @@ export class UpdateDialogComponent implements OnInit {
     phoneNumber: new FormControl('',[Validators.required, Validators.maxLength(10)]),
   });
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data:Contact){
+
+  updateExContact!: Contact;
+
+  constructor(public dialogRef: MatDialogRef<UpdateDialogComponent>,@Inject(MAT_DIALOG_DATA) public data:Contact, private contactservice:ContactServiceService){
     this.contactToUpdate=data;
   }
 
@@ -32,6 +36,17 @@ export class UpdateDialogComponent implements OnInit {
   }
 
   onSubmit(){
+
+    this.updateExContact={
+      Id:this.contactToUpdate.Id,
+      FirstName:this.updateForm.controls['firstName'].value as string,
+      LastName:this.updateForm.controls['lastName'].value as string,
+      Address:this.updateForm.controls['address'].value as string,
+      PhoneNumber:this.updateForm.controls['phoneNumber'].value as string,
+    };
+
+    this.contactservice.updateExistingConatct(this.updateExContact);
+    this.dialogRef.close();
 
   }
 }

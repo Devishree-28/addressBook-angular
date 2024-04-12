@@ -1,1 +1,30 @@
-<p>delete-dialog works!</p>
+
+<div id="updatecardContent">
+    <h2 id="updateContactTilte">Delete Contact</h2>
+    <form [formGroup]="deleteForm" (ngSubmit)="onSubmit()" class="newcontactForm">
+
+      <div class="formInputs">
+      <mat-form-field class="example-form-field">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address">
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phoneNumber">
+      </mat-form-field>
+  </div>
+
+
+    <button mat-raised-button id="cardbutton" mat-dialog-close color="primary">Cancel</button>
+    <button mat-raised-button id="cardbutton" type="submit" color="warn">Delete</button>
+  
+</form>
+</div>

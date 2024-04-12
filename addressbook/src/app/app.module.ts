@@ -12,12 +12,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HomeComponent } from './home/home.component';
-import { ContatctsListComponent } from './contatcts-list/contatcts-list.component';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { UpdateDialogComponent } from './Dialogs/update-dialog/update-dialog.component';
 import { DeleteDialogComponent } from './Dialogs/delete-dialog/delete-dialog.component';
@@ -26,10 +27,10 @@ import { DeleteDialogComponent } from './Dialogs/delete-dialog/delete-dialog.com
   declarations: [
     AppComponent,
     HomeComponent,
-    ContatctsListComponent,
     NewContactComponent,
     UpdateDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    ContactsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { DeleteDialogComponent } from './Dialogs/delete-dialog/delete-dialog.com
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginator
   ],
   providers: [
     provideAnimationsAsync()

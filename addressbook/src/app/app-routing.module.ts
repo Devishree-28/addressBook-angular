@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContatctsListComponent } from './contatcts-list/contatcts-list.component';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
-  {path:'contacts',component:ContatctsListComponent},
+  {path:'contacts',component:ContactsListComponent},
   {path:'newcontact',component:NewContactComponent}
 ];
 
